@@ -1,12 +1,8 @@
 const btnSubmit = document.querySelector("#submit");
 const taskList = document.querySelector(".task-list");
-
 const taskInput = document.querySelector("#input-task");
 const iconInfo = document.querySelector(".icon-info");
 const info = document.querySelector(".info");
-
-const warning = document.querySelector(".warning");
-
 const btnClearAll = document.querySelector("#clear-all");
 
 let items = [];
@@ -18,6 +14,7 @@ const addTask = () => {
   const delItem = `<span class="material-icons delBtn" onclick="removeTask(this)">close</span>`;
   const todoTxt = taskInput.value;
   li.innerHTML = `${checkbox}<p>${todoTxt}</p>${delItem}`;
+  //To put non-repeating task.
   if (!items.includes(todoTxt)) {
     items.push(todoTxt);
     taskList.appendChild(li);
@@ -66,13 +63,11 @@ const changeColor = (e) => {
 //Information text detail.
 const showInfoTxt = () => {
   const infoTxt = `
-  <div class="overlay">
     <div class="information">
     <p>This To-Do list is a project assignment for Fullstack Web Developer Program at Business College Helsinki.</p>
     <p></p>
     <p>&mdash; Copyright: Vijay KC, 2022</p>
-  </div>
- </div>`;
+  </div>`;
   info.innerHTML = infoTxt;
 };
 
