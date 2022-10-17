@@ -21,7 +21,8 @@ const addTask = () => {
   }
   localStorage.setItem("items", JSON.stringify(items));
   taskInput.value = "";
-  btnClearAll.style.display = "block";
+  console.log(items.length);
+  toggleClearAll();
 };
 
 //Removing tasks
@@ -33,9 +34,7 @@ const removeTask = (e) => {
     items.splice(items.indexOf(todo), 1);
   }
   localStorage.setItem("items", JSON.stringify(items));
-  if (items.length == 0) {
-    btnClearAll.style.display = "none";
-  }
+  toggleClearAll();
 };
 
 //Showing items stored in local storage on screen loading/refreshing.
@@ -52,6 +51,7 @@ const loadTasks = () => {
       li.innerHTML = `${checkbox}<p>${todoTxt}</p>${delItem}`;
       taskList.appendChild(li);
     });
+    toggleClearAll();
   }
 };
 
@@ -71,6 +71,14 @@ const showInfoTxt = () => {
   info.innerHTML = infoTxt;
 };
 
+const toggleClearAll = () => {
+  if (items.length > 0) {
+    btnClearAll.style.display = "block";
+  } else {
+    btnClearAll.style.display = "none";
+  }
+};
+
 //Showing information text.
 iconInfo.addEventListener("click", () => {
   showInfoTxt();
@@ -82,7 +90,6 @@ btnClearAll.addEventListener("click", () => {
   taskList.innerHTML = "";
   items = [];
   localStorage.removeItem("items");
-  btnClearAll.style.display = "none";
 });
 
 btnSubmit.addEventListener("click", (e) => {

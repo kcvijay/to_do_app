@@ -13,7 +13,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   max-width: 100vw;
   max-height: 100vh;
-  background-color: #999;
+  background-color: #cccccc;
 }
 
 button {
@@ -35,7 +35,7 @@ button:active {
 .wrapper {
   background: #fff;
   max-width: 60rem;
-  margin: 5rem auto;
+  margin: 0 auto;
   min-height: 50vh;
   position: relative;
 }
@@ -108,7 +108,7 @@ button:active {
 }
 
 .section-tasks {
-  margin: 10rem auto;
+  margin: 3rem auto;
 }
 
 .warning {
@@ -181,16 +181,16 @@ li.bg-change {
 
 @keyframes slideRight {
   0% {
-    transform: translateX(-300px);
+    transform: translateY(-30px);
     opacity: 0;
   }
 
   50% {
-    transform: translateX(30px);
+    transform: translateY(10px);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
