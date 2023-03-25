@@ -1,0 +1,14 @@
+{
+  "name": "to_do_app_ts",
+  "version": "1.0.0",
+  "description": "to do app created in typescript",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vijay kc",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

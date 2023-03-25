@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
+    <link rel="icon" type="image/x-icon" href="/assets/list.png" />
+    <title>To Do App in Typescript</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -17,16 +18,16 @@
       <main>
         <div class="background">
           <header>
-            <h1>to-do list</h1>
-            <i class="material-icons icon-info">info</i>
-            <p class="info"></p>
+            <h1>to-do app in typescript</h1>
+            <p class="material-icons icon-info">info</p>
           </header>
         </div>
+        <div class="info-wrapper" onclick="this.style.display = 'none';"></div>
         <section class="section-input">
           <form>
-            <label for="input-task">New Task:</label>
-            <input type="text" id="input-task" required />
-            <button type="submit" id="submit">Add</button>
+            <label for="input-task">New Task</label>
+            <input type="text" id="input-task" required autocomplete="off" />
+            <button role="button" type="submit" id="submit">Add</button>
           </form>
         </section>
         <section class="section-tasks">
@@ -35,6 +36,6 @@
         <button id="clear-all">clear all</button>
       </main>
     </div>
-    <script src="main.js"></script>
+    <script src="./dist/main.js"></script>
   </body>
 </html>
